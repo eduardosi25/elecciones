@@ -1,0 +1,108 @@
+
+<!DOCTYPE html><html>
+<meta charset="utf-8" />
+<head>
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+ <style>
+
+ #map {
+  width:100%;
+  height: 600px;
+  background-color: black;
+}
+.leaflet-control-attribution .leaflet-control{
+	display:none;
+}
+path:hover {
+		 fill: #f9b3f2;
+	 }
+path{
+	stroke-width: 1;
+	stroke: gray;
+	 }
+.leaflet-marker-icon{
+	background: url("/img/Cuadros.png") 0px 0px;
+	 }
+
+ </style>
+
+ </head>
+  <body>
+   <div id="map"></div>
+   <script type="text/javascript" src="/js/mexico3.js"></script>
+ <script>
+ var map = L.map('map').setView([24, -100], 5.45555);
+     L.geoJson(countries).addTo(map);
+console.log(countries);
+//console.log(map);
+
+function style(feature) {
+return {
+fillColor: getColor(
+feature.properties.name),
+/*weight: 1,*/
+opacity: 0,
+color: 'white',
+//dashArray: '3',
+fillOpacity: .5,
+
+};
+}
+
+function getColor(d) {
+	console.log(d)
+return d == "Yucatán" ? '#eb008b' :
+			 d == "Distrito Federal" ? '#eb008b' :
+			 d == "Jalisco" ? '#eb008b' :
+			 d == "Guanajuato" ? '#eb008b' :
+			 d == "Chiapas" ? '#eb008b' :
+			 d == "Morelos" ? '#eb008b' :
+			 d == "Puebla" ? '#eb008b' :
+			 d == "Tabasco" ? '#eb008b' :
+			 d == "Veracruz" ? '#eb008b' :
+
+/*d > 50000000 ? '#BD0026' :*/'gray';
+}
+var firefoxIcon = L.icon({
+        iconUrl: '/img/img_trans.gif',
+			  iconSize: [10, 10], // size of the icon
+        popupAnchor: [0,-15]
+        });
+
+
+
+
+			//	var customPopup = "Mozilla Toronto Offices<br/><img src='http://joshuafrazier.info/images/maptime.gif' alt='maptime logo gif' width='350px'/>";
+
+    // specify popup options
+    var customOptions =
+        {
+        'maxWidth': '300',
+				'maxHeight': '95',
+        'className' : 'custom'
+        }
+
+    // create marker object, pass custom icon as option, pass content customPopup and options to popup customOptions, add to map
+		//Yucatán
+  L.marker([20.663, -88.9836], {icon: firefoxIcon}).bindPopup("Yucatán",customOptions).addTo(map);
+		//Chiapas
+	L.marker([16.527, -92.581],  {icon: firefoxIcon}).bindPopup("Chiapas",customOptions).addTo(map);
+    //veracruz
+	L.marker([19.0926, -96.595],  {icon: firefoxIcon}).bindPopup("Veracruz",customOptions).addTo(map);
+	 //Puebla
+	L.marker([18.549, -97.8889],  {icon: firefoxIcon}).bindPopup("Puebla",customOptions).addTo(map);
+	 //Morelos
+	L.marker([18.742, -99.0785],  {icon: firefoxIcon}).bindPopup("Morelos",customOptions).addTo(map);
+  //Distrito Federal
+  L.marker([19.32662, -99.1369],  {icon: firefoxIcon}).bindPopup("Distrito Federal",customOptions).addTo(map);
+	//Guanajuato
+	L.marker([20.8141, -100.904],  {icon: firefoxIcon}).bindPopup("Guanajuato",customOptions).addTo(map);
+	//Jalisco
+  L.marker([20.3026, -103.602],  {icon: firefoxIcon}).bindPopup("Jalisco",customOptions).addTo(map);
+
+  L.geoJson(countries, { style: style }).addTo(map);
+ </script>
+ </body>
+ </html>

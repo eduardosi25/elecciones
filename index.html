@@ -1,0 +1,380 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+
+  #map {
+   width:100%;
+   height: 600px;
+   background-color: transparent;
+ }
+ .leaflet-control-attribution .leaflet-control{
+ 	display:none;
+ }
+ path:hover {
+ 		 fill: #f9b3f2;
+ 	 }
+ path{
+ 	stroke-width: 1;
+ 	stroke: gray;
+ 	 }
+ .leaflet-marker-icon{
+ 	background: url("/img/Cuadros.png") 0px 0px;
+ 	 }
+
+ .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+   background: #8c4f86 !important;
+   color: white;
+   box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+ }
+ .leaflet-touch .leaflet-bar a {
+    display: none;
+  }
+.leaflet-touch .leaflet-control-attribution{
+  display:none;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container" style="background-image:url(/img/TexturaDSKTP.png);">
+    <div class="container-brand" style="text-align:center; ">
+        <a class="navbar-brand-mobile hidden-lg-up"  href="#"><img src="/img/BanderaDsktp.png" alt=""></a>
+    </div>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse">
+
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="navbar-brand" href="#" style="margin-bottom: 30px;">
+        <a href="http://facebook.com" target="_blank" style="color:white; float:right;"><i class="share-face fab fa-facebook-f hidden-lg-up"></i></a>
+        <a href="http://twitter.com" target="_blank" style="color:white; float:right; margin-right:15px;"><i class="share-twitter fab fa-twitter hidden-lg-up  "  ></i> </a>
+        <a href="http://whatssapp.com" target="_blank" style="color:white; float:right; margin-right:15px;"><i class="share-twitter fab fa-whatsapp hidden-lg-up  "  ></i> </a>
+
+      </div>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <a class="navbar-brand hidden-md-down" href="#"><img src="/img/BanderaDsktp.png" alt=""></a>
+            <ul class="navbar-nav">
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Ciudad de México</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Guanajuato</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Jalisco</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Morelos</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Puebla</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Tabasco</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Veracruz</a>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" href="#">Yucatán</a>
+              </li>
+              <li class="nav-item col-lg-4 col-md-12">
+                <a class="nav-link" href="#">Elecciones Federales</a>
+              </li>
+              <li class="nav-item col-lg-4 col-md-12">
+                <a class="nav-link" href="#">Elecciones Locales</a></a>
+              </li>
+              <li class="nav-item col-lg-4 col-md-12">
+                <a class="nav-link" href="#">Gobernadores</a></a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+<!--
+    <a class="navbar-brand hidden-sm-up" href="#"><img src="/img/BanderaDsktp.png" alt=""></a>
+    <nav class="navbar navbar-toggleable-md navbar-inverse ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <svg aria-hidden="true" data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-caret-down fa-w-10" style="font-size: 30px;">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" class="">
+        </path>
+      </svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand hidden-md-down" href="#"><img src="/img/BanderaDsktp.png" alt=""></a>
+        <ul class="navbar-nav col-md-10">
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Ciudad de México</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Guanajuato</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Jalisco</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Morelos</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Puebla</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Tabasco</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Veracruz</a>
+          </li>
+          <li class="nav-item hidden-md-up">
+            <a class="nav-link" href="#">Yucatán</a>
+          </li>
+           <li class="nav-item active hidden-md-down col-lg-3 col-md-12">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+
+
+          <li class="nav-item col-lg-4 col-md-12">
+            <a class="nav-link" href="#">Elecciones Federales</a>
+          </li>
+          <li class="nav-item col-lg-4 col-md-12">
+            <a class="nav-link" href="#">Elecciones Locales</a></a>
+          </li>
+          <li class="nav-item col-lg-4 col-md-12">
+            <a class="nav-link" href="#">Gobernadores</a></a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+
+-->
+
+
+    <div class="container-text col-md-12 col-lg-3">
+      <span>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.
+      Dus aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+    </span>
+    </div>
+    <div class="container-map col-lg-9 hidden-md-down">
+         <div id="map"></div>
+    </div>
+
+    <div class="container-title col-lg-12 ">
+      <div class="candidate-title col-md-9 col-lg-9 col-sm-12 offset-lg-3 offset-md-3">
+        <div class="square-detail"></div>
+        <h2>CANDIDATOS A LA GUBERNATURA</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 container-candidates row">
+
+      <div class="container-item col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="square-pol square-political-party-empty col-lg-3"></div>
+          <div class="bigsquare-political-party"><img src="./img/candidates/Antares-Vázquez-Alatorre.jpg" alt=""></div>
+          <div class="square-pol square-political-party1 col-lg-3"></div>
+          <div class="square-pol square-political-party2 col-lg-3"></div>
+          <div class="square-pol square-political-party3 col-lg-3"></div>
+          <div class="square-pol square-political-party4 col-lg-3"></div>
+
+
+          <div class="container-details">
+            <div class="container-middle">
+              <ul class="details">
+                <li class="candidate-name">Andres Manuel Lopez Obrador</li>
+                <li class="coalition-name">NOMBRE COALICION</li>
+                <li class="profile">- Perfil Andres Manuel Lopez Obrador</li>
+                <li class="description">- Amlo llama a transformar México sin enemistades.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-item col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="square-pol square-political-party-empty col-lg-3"></div>
+          <div class="bigsquare-political-party"><img src="./img/candidates/Cuauhtémoc-Blanco-Bravo.jpg" alt=""></div>
+          <div class="square-pol square-political-party1 col-lg-3"></div>
+          <div class="square-pol square-political-party2 col-lg-3"></div>
+          <div class="square-pol square-political-party3 col-lg-3"></div>
+          <div class="square-pol square-political-party4 col-lg-3"></div>
+
+          <div class="container-details">
+            <div class="container-middle">
+              <ul class="details">
+                <li class="candidate-name">Andres Manuel Lopez Obrador</li>
+                <li class="coalition-name">NOMBRE COALICION</li>
+                <li class="profile">- Perfil Andres Manuel Lopez Obrador</li>
+                <li class="description">- Amlo llama a transformar México sin enemistades.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-item col-lg-4 col-md-6 col-sm-12" style="top: 50px; color:white;">
+        <div class="col-lg-12 col-md-12 col-sm-12" >
+          <div class="square-pol square-political-party-empty col-lg-3"></div>
+          <div class="bigsquare-political-party"><img src="./img/candidates/Miguel-Barbosa.jpg" alt=""></div>
+          <div class="square-pol square-political-party1 col-lg-3"></div>
+          <div class="square-pol square-political-party2 col-lg-3"></div>
+          <div class="square-pol square-political-party3 col-lg-3"></div>
+          <div class="square-pol square-political-party4 col-lg-3"></div>
+
+          <div class="container-details">
+            <div class="container-middle">
+              <ul class="details">
+                <li class="candidate-name">Andres Manuel Lopez Obrador</li>
+                <li class="coalition-name">NOMBRE COALICION</li>
+                <li class="profile">- Perfil Andres Manuel Lopez Obrador</li>
+                <li class="description">- Amlo llama a transformar México sin enemistades.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /container -->
+    </div>
+    <div class="container-title col-lg-12">
+      <div class="candidate-title col-md-9 col-lg-9 col-sm-12 offset-lg-3 offset-md-3">
+        <div class="square-detail"></div>
+        <h2>36 DIPUTACIONES LOCALES</h2>
+      </div>
+      <div class="candidate-details col-md-12 offset-lg-4 col-lg-4 col-sm-12">
+        <ul class="" style="text-align:center; list-style: none;">
+
+          <li>22 por mayoría relativa</li>
+          <li>14 por representacion proporcional</li>
+          <li>46 AYUNTAMIENTOS</li>
+
+        </ul>
+      </div>
+      <a href="#"><div class="view-more offset-md-4 col-md-4 offset-lg-4 col-lg-4 col-sm-12" style="">
+        <span style="padding-top:25px;">VER MÁS</span>
+      </div></a>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  <script src="/js/main.js"></script>
+     <script type="text/javascript" src="/js/mexico3.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function(b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function() {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = '//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>
+  var map = L.map('map',{ zoomControl:false,scrollWheelZoom:false,dragging:false,doubleClickZoom:false}).setView([24, -102], 4.50);
+      L.geoJson(countries).addTo(map);
+ console.log(countries);
+ //console.log(map);
+
+ function style(feature) {
+ return {
+ fillColor: getColor(
+ feature.properties.name),
+ /*weight: 1,*/
+ opacity: 0,
+ color: 'white',
+ //dashArray: '3',
+ fillOpacity: .5,
+
+ };
+ }
+
+ function getColor(d) {
+   console.log(d)
+ return d == "Yucatán" ? '#eb008b' :
+        d == "Distrito Federal" ? '#eb008b' :
+        d == "Jalisco" ? '#eb008b' :
+        d == "Guanajuato" ? '#eb008b' :
+        d == "Chiapas" ? '#eb008b' :
+        d == "Morelos" ? '#eb008b' :
+        d == "Puebla" ? '#eb008b' :
+        d == "Tabasco" ? '#eb008b' :
+        d == "Veracruz" ? '#eb008b' :
+
+ /*d > 50000000 ? '#BD0026' :*/'gray';
+ }
+ var firefoxIcon = L.icon({
+         iconUrl: '/img/img_trans.gif',
+         iconSize: [10, 10], // size of the icon
+         popupAnchor: [0,-15]
+         });
+
+
+
+
+       //	var customPopup = "Mozilla Toronto Offices<br/><img src='http://joshuafrazier.info/images/maptime.gif' alt='maptime logo gif' width='350px'/>";
+
+     // specify popup options
+     var customOptions =
+         {
+         'maxWidth': '300',
+         'maxHeight': '95',
+         'className' : 'custom'
+         }
+
+     // create marker object, pass custom icon as option, pass content customPopup and options to popup customOptions, add to map
+     //Yucatán
+   L.marker([20.663, -88.9836], {icon: firefoxIcon}).bindPopup("Yucatán",customOptions).addTo(map);
+     //Chiapas
+   L.marker([16.527, -92.581],  {icon: firefoxIcon}).bindPopup("Chiapas",customOptions).addTo(map);
+     //veracruz
+   L.marker([19.0926, -96.595],  {icon: firefoxIcon}).bindPopup("Veracruz",customOptions).addTo(map);
+    //Puebla
+   L.marker([18.549, -97.8889],  {icon: firefoxIcon}).bindPopup("Puebla",customOptions).addTo(map);
+    //Morelos
+   L.marker([18.742, -99.0785],  {icon: firefoxIcon}).bindPopup("Morelos",customOptions).addTo(map);
+   //Distrito Federal
+   L.marker([19.32662, -99.1369],  {icon: firefoxIcon}).bindPopup("Distrito Federal",customOptions).addTo(map);
+   //Guanajuato
+   L.marker([20.8141, -100.904],  {icon: firefoxIcon}).bindPopup("Guanajuato",customOptions).addTo(map);
+   //Jalisco
+   L.marker([20.3026, -103.602],  {icon: firefoxIcon}).bindPopup("Jalisco",customOptions).addTo(map);
+
+   L.geoJson(countries, { style: style }).addTo(map);
+  </script>
+
+</body>
+
+</html>

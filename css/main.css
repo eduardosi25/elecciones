@@ -1,0 +1,398 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html body {
+  background-image: url("/img/Back.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-family: "Breve Slab Text SemiBold";
+  font-size: 24pt;
+}
+
+div.candidate-details>ul>li {
+  font-family: "Breve Slab Text Light";
+  font-size: 15pt;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Breve Slab Text Light";
+  src: url(../fonts/DSType - Breve Slab Text Light.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Breve Slab Text SemiBold";
+  src: url(../fonts/DSType - Breve Slab Text SemiBold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Breve Slab Title Light";
+  src: url(../fonts/DSType - Breve Slab Title Light.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Breve Slab Title SemiBold";
+  src: url(../fonts/DSType - Breve Slab Title SemiBold.otf) format("truetype");
+}
+
+.navbar {
+  background-color: transparent;
+  background: transparent;
+  padding: 0;
+}
+
+
+
+.nav-item {
+
+  font-family: "Breve Slab Text Light";
+  font-size: 18pt;
+  text-shadow: 0 3px 2px rgba(173, 173, 173, 0.75);
+}
+
+.container {
+background-image: url(/img/TexturaDSKTP.png);
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: 700px 273px;
+
+}
+
+.container-candidates {
+  padding: 0;
+  /*border: 1px solid yellow; */
+  float: left;
+  position: relative;
+  min-height: 600px !important;
+}
+
+.container-item {
+  top: 50px;
+  color: white;
+  /*  border: 1px solid greenyellow; */
+  min-height: 582px !important;
+  padding: 0 !important;
+}
+
+.bigsquare-political-party {
+  float: left;
+  left: 82px;
+  top: 0px;
+  border-width: 4px 4px 4px 0px;
+  border: solid white;
+  height: 200px;
+  width: 202px;
+  background-size: 196px 194px;
+}
+
+.square-pol {
+  border: 4px solid white;
+  height: 68px;
+  width: 68px;
+  background-size: 60px 60px;
+}
+
+.square-political-party-empty {
+  float: left;
+  border: 4px solid white;
+  height: 68px;
+  width: 68px;
+}
+
+.square-political-party1 {
+  background-image: url('/img/logos/PRD120x120.jpg');
+}
+
+.square-political-party2 {
+  background-image: url('/img/logos/PRI120x120.jpg');
+}
+
+.square-political-party3 {
+  background-image: url('/img/logos/PRS120x120.jpg');
+}
+
+.square-political-party4 {
+  background-image: url('/img/logos/PT120x120.jpg');
+}
+
+.container-header {
+  background-image: url(/img/TexturaDSKTP.png);
+}
+
+.container-details {
+  float: right;
+  border: 4px solid white;
+  position: absolute;
+  top: 15%;
+  z-index: -1;
+  margin-left: 2rem;
+}
+
+.candidate-name {
+  font-family: "Breve Slab Title SemiBold";
+  font-size: 24pt;
+}
+
+.coalition-name {
+  font-family: "Breve Slab Title Light";
+  font-size: 14pt;
+  border-bottom: 1px solid white;
+}
+
+.profile, .description {
+  font-family: "Breve Slab Title SemiBold";
+  font-size: 14pt;
+  margin-top: 15px;
+}
+
+.container-middle {
+  padding-top: 60%;
+}
+
+.container-text {
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+  font-family: "Breve Slab Text Light";
+  font-size: 18pt;
+}
+
+.container-text>span {
+  color: white;
+}
+
+.container-map {
+  float: right;
+  margin-top: 20px;
+  height: 500px;
+}
+
+.container-map>img {
+  width: 683px;
+  height: -webkit-fill-available;
+}
+
+.container-title {
+  color: white;
+  float: left;
+}
+
+.square-detail {
+  width: 10px;
+  height: 10px !important;
+  background-image: url('/img/Cuadros.png');
+  float: left;
+  margin-top: 11px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.candidate-title>h1 {
+  text-align: left;
+  font-family: "Breve Slab Text SemiBold";
+  font-size: 24pt;
+}
+
+.nav-link {
+  text-align: center;
+  margin-top: 0px;
+  white-space: nowrap;
+}
+/*
+.navbar-collapse {
+  border-bottom: 1px solid #ffffff;
+}
+*/
+.navbar-brand {
+  padding-bottom: 0 !important;
+}
+
+.details>li {
+  list-style: none;
+}
+
+.view-more {
+  padding-top: 12px;
+  text-align: center;
+  border: 1px solid white;
+  height: 50px;
+  margin-bottom: 150px;
+}
+@media all and (min-width:1024px){
+  .navbar-nav {
+    border-bottom: 1px solid white;
+  }
+}
+@media all and (min-width:992px) and (max-width: 1024px) {
+  .navbar-nav {
+    border-bottom: 1px solid white;
+  }
+}
+
+@media all and (min-width:801px) and (max-width: 991px) {
+  .nav-item {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #555555
+  }
+
+
+}
+
+@media all and (min-width:769px) and (max-width: 800px) {
+  .nav-item {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #555555
+  }
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  .nav-item {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #555555;
+  }
+  .navbar-nav {
+    max-width: 100%;
+  }
+  .candidate-name{
+    padding-right: 10px;
+  }
+}
+
+@media all and (min-width:481px) and (max-width: 568px) {
+  .nav-item {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #555555
+  }
+}
+
+@media all and (min-width:321px) and (max-width: 480px) {
+  .nav-item {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #555555
+  }
+  .navbar-nav {
+    padding: 0px;
+  }
+  .bigsquare-political-party {
+    float: left;
+    left: 82px;
+    top: 0px;
+    border-width: 2px 2px 2px 0px;
+    border: solid white;
+    height: 88px;
+    width: 88px;
+    background-size: 196px 194px;
+  }
+  .bigsquare-political-party>img {
+    height: 82px;
+    width: 84px
+  }
+  .square-pol {
+    border: 2px solid white;
+    height: 34px;
+    width: 34px;
+    background-size: 30px 30px;
+  }
+  .container-details {
+    float: right;
+    border: 2px solid white;
+    position: absolute;
+    top: 15%;
+    z-index: -1;
+    margin-left: 1rem;
+  }
+  .container-middle {
+    padding-top: 30%;
+  }
+  .container-item {
+    /* border: 1px solid greenyellow; */
+    min-height: 465px !important;
+    padding: 0 !important;
+  }
+  .profile, .description {
+    font-family: "Breve Slab Title SemiBold";
+    font-size: 14pt;
+  }
+  .navbar-nav {
+    padding: 0px;
+  }
+  h2 {
+    font-family: "Breve Slab Title SemiBold";
+    font-size: 16pt;
+  }
+}
+
+@media all and (min-width:0px) and (max-width: 320px) {
+  div.candidate-details>ul {
+    padding: 0;
+  }
+  .bigsquare-political-party {
+    float: left;
+    left: 82px;
+    top: 0px;
+    border-width: 2px 2px 2px 0px;
+    border: solid white;
+    height: 88px;
+    width: 88px;
+    background-size: 196px 194px;
+  }
+  .bigsquare-political-party>img {
+    height: 82px;
+    width: 84px
+  }
+  .square-pol {
+    border: 2px solid white;
+    height: 34px;
+    width: 34px;
+    background-size: 30px 30px;
+  }
+  .container-details {
+    float: right;
+    border: 2px solid white;
+    position: absolute;
+    top: 15%;
+    z-index: -1;
+    margin-left: 1rem;
+  }
+  .container-middle {
+    padding-top: 30%;
+  }
+  .container-item {
+    /* border: 1px solid greenyellow; */
+    min-height: 465px !important;
+    padding: 0 !important;
+  }
+  .profile, .description {
+    font-family: "Breve Slab Title SemiBold";
+    font-size: 14pt;
+  }
+  .navbar-nav {
+    padding: 0px;
+  }
+  h2 {
+    font-family: "Breve Slab Title SemiBold";
+    font-size: 16pt;
+  }
+  .nav-item {
+    border-bottom: 1px solid #555555;
+
+  }
+  .nav-item:active {
+    border-bottom: 1px solid #555555;
+    background-color: red;
+  }
+}
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    color: white !important;
+}
