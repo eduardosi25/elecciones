@@ -3,7 +3,7 @@
    ========================================================================== */
 
 html body {
-  background-image: url("/img/Back.jpg");
+  background-image: url("./img/Back.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
 }
