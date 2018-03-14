@@ -59,7 +59,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .container {
-background-image: url(/img/TexturaDSKTP.png);
+background-image: url("./img/TexturaDSKTP.png");
 overflow: hidden;
 background-repeat: no-repeat;
 background-size: 700px 273px;
@@ -108,23 +108,23 @@ background-size: 700px 273px;
 }
 
 .square-political-party1 {
-  background-image: url('/img/logos/PRD120x120.jpg');
+  background-image: url('./img/logos/PRD120x120.jpg');
 }
 
 .square-political-party2 {
-  background-image: url('/img/logos/PRI120x120.jpg');
+  background-image: url('./img/logos/PRI120x120.jpg');
 }
 
 .square-political-party3 {
-  background-image: url('/img/logos/PRS120x120.jpg');
+  background-image: url('./img/logos/PRS120x120.jpg');
 }
 
 .square-political-party4 {
-  background-image: url('/img/logos/PT120x120.jpg');
+  background-image: url('./img/logos/PT120x120.jpg');
 }
 
 .container-header {
-  background-image: url(/img/TexturaDSKTP.png);
+  background-image: url("./img/TexturaDSKTP.png");
 }
 
 .container-details {
@@ -189,7 +189,7 @@ background-size: 700px 273px;
 .square-detail {
   width: 10px;
   height: 10px !important;
-  background-image: url('/img/Cuadros.png');
+  background-image: url('./img/Cuadros.png');
   float: left;
   margin-top: 11px;
   height: 40px;
