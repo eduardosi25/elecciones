@@ -425,7 +425,7 @@ path:hover {
 
 svg>g>path {
   stroke-width: 1;
-  stroke: gray;
+  stroke: #f7f7f7;
   background-color: transparent;
   fill: transparent;
   fill-opacity: 1;
