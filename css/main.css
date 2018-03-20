@@ -1063,3 +1063,6 @@ background-position-y: 21px;
     height: 40px;
     margin-right: 10px;
 }
+div.leaflet-control-attribution.leaflet-control {
+  display:none;
+}
