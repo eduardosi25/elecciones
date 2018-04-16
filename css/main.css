@@ -303,6 +303,7 @@ a, a:link, a:visited, a:hover, a:active {
   min-width: 15.2rem;
 }
 
+
 li.nav-item.col-lg-4.col-md-12.dropdown.open.show > ul > li{
   border-bottom: 1px solid black;
 
